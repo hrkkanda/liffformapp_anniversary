@@ -65,7 +65,7 @@
             $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
                 const month = $('input[name="month"]').val();
-                const shushoujou  = $('input[name="date"]').val();
+                const date  = $('input[name="date"]').val();
                 const msg = `${name}\n${month}\n${date}`;
                 sendText(msg);
                 return false;
