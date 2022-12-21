@@ -16,11 +16,11 @@
         </div>
         <p class="mt-3">月(半角数字)</p>
         <div>
-            <input class="form-control w-100 mt-1" name="bangou" required>
+            <input class="form-control w-100 mt-1" name="month" required>
         </div>
         <p class="mt-3">日(半角数字)</p>
         <div>
-            <input class="form-control w-100 mt-1" name="bangou" required>
+            <input class="form-control w-100 mt-1" name="date" required>
         </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
@@ -64,11 +64,9 @@
         $(function () {
             $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
-                const bangou = $('input[name="bangou"]').val();
-                const shushoujou  = $('input[name="shushoujou"]').val();
-                const keika  = $('input[name="keika"]').val();
-                const hatunetu = $('input[name="hatunetu"]').val();
-                const msg = `${name}\n${bangou}\n${shushoujou}\n${keika}\n${hatunetu}`;
+                const month = $('input[name="month"]').val();
+                const shushoujou  = $('input[name="date"]').val();
+                const msg = `${name}\n${month}\n${date}`;
                 sendText(msg);
                 return false;
             });
