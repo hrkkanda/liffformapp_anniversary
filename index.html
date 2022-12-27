@@ -31,9 +31,40 @@
             <option value="12">１２月</option>
         </select>
         <p class="mt-3">日(半角数字)</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="date" required>
-        </div>
+        <select class="form-control w-100 mt-1" name="date" required>
+            <option value="">選択してください</option>
+            <option value="1">１日</option>
+            <option value="2">２日</option>
+            <option value="3">３日</option>
+            <option value="4">４日</option>
+            <option value="5">５日</option>
+            <option value="6">６日</option>
+            <option value="7">７日</option>
+            <option value="8">８日</option>
+            <option value="9">９日</option>
+            <option value="10">１０日</option>
+            <option value="11">１１日</option>
+            <option value="12">１２日</option>
+            <option value="13">１３日</option>
+            <option value="14">１４日</option>
+            <option value="15">１５日</option>
+            <option value="16">１６日</option>
+            <option value="17">１７日</option>
+            <option value="18">１８日</option>
+            <option value="19">１９日</option>
+            <option value="20">２０日</option>
+            <option value="21">２１日</option>
+            <option value="22">２２日</option>
+            <option value="23">２３日</option>
+            <option value="24">２４日</option>
+            <option value="25">２５日</option>
+            <option value="26">２６日</option>
+            <option value="27">２７日</option>
+            <option value="28">２８日</option>
+            <option value="29">２９日</option>
+            <option value="30">３０日</option>
+            <option value="31">３１日</option>
+        </select>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
 
@@ -77,7 +108,7 @@
             $('form').submit(function () {
                 const name  = $('input[name="name"]').val();
                 const month = $('select[name="month"]').val();
-                const date  = $('input[name="date"]').val();
+                const date  = $('select[name="date"]').val();
                 const msg = `${name}\n${month}\n${date}`;
                 sendText(msg);
                 return false;
