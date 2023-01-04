@@ -109,7 +109,7 @@
                 const name  = $('input[name="name"]').val();
                 const month = $('select[name="month"]').val();
                 const date  = $('select[name="date"]').val();
-                const msg = `${name}\n${month}\n${date}`;
+                const msg = "登録" + " " + `${name}` + " " + `${month}` + " " + `${date}`;
                 sendText(msg);
                 return false;
             });
