@@ -67,7 +67,7 @@
         </select>
         <p class="mt-3">年（オプション）</p>
         <select class="form-control w-100 mt-1" name="year">
-            <option value="選択なし" selected>選択しない</option>
+            <option value="" selected>選択しない</option>
             <option value="1960">昭和35年（1960）</option>
             <option value="1961">昭和36年（1961）</option>
             <option value="1962">昭和37年（1962）</option>
@@ -177,7 +177,12 @@
                 const month = $('select[name="month"]').val();
                 const date  = $('select[name="date"]').val();
                 const year  = $('select[name="year"]').val();
-                const msg = "登録" + "\n" + `${name}` + "\n" + `${year}` + "/" +`${month}` + "/" + `${date}`;
+                var msg = "";
+                if (year == "") {
+                    msg = "登録" + "\n" + `${name}` + "\n" + `${month}` + "/" + `${date}`;
+                }else {
+                    msg = "登録" + "\n" + `${name}` + "\n" + `${year}` + "/" +`${month}` + "/" + `${date}`;
+                }
                 sendText(msg);
                 return false;
             });
