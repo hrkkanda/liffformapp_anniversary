@@ -186,9 +186,9 @@
                 const remind  = $('select[name="remind"]').val();
                 var msg = "";
                 if (year == "") {
-                    msg = "登録" + "\n" + "\n" +`${name}` + `${remind}`+ "\n" + `${month}` + "/" + `${date}`;
+                    msg = "登録" + "\n" +`${name}` + "\n" + `${remind}`+ "\n" + `${month}` + "/" + `${date}`;
                 }else {
-                    msg = "登録" + "\n" + "\n" +`${name}` + `${remind}`+ "\n" + `${year}` + "/" +`${month}` + "/" + `${date}`;
+                    msg = "登録" + "\n" +`${name}` + "\n" + `${remind}`+ "\n" + `${year}` + "/" +`${month}` + "/" + `${date}`;
                 }
                 sendText(msg);
                 return false;
