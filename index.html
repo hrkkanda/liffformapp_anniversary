@@ -132,6 +132,12 @@
             <option value="2021">令和3年（2021）</option>
             <option value="2022">令和4年（2022）</option>
         </select>
+        <p class="mt-3">リマインダー設定</p>
+        <select class="form-control w-100 mt-1" name="remind">
+            <option value="リマインドあり" selected>リマインドあり（3週間前と1週間前）</option>
+            <option value="リマインドなし">リマインドなし（当日のみ）</option>
+        </select>
+
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
 
@@ -177,11 +183,12 @@
                 const month = $('select[name="month"]').val();
                 const date  = $('select[name="date"]').val();
                 const year  = $('select[name="year"]').val();
+                const remind  = $('select[name="remind"]').val();
                 var msg = "";
                 if (year == "") {
-                    msg = "登録" + "\n" + `${name}` + "\n" + `${month}` + "/" + `${date}`;
+                    msg = "登録" + "\n" + `${remind}` + "\n" +`${name}` + "\n" + `${month}` + "/" + `${date}`;
                 }else {
-                    msg = "登録" + "\n" + `${name}` + "\n" + `${year}` + "/" +`${month}` + "/" + `${date}`;
+                    msg = "登録" + "\n" + `${remind}` + "\n" +`${name}` + "\n" + `${year}` + "/" +`${month}` + "/" + `${date}`;
                 }
                 sendText(msg);
                 return false;
