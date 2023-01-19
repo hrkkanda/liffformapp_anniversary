@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -30,6 +31,26 @@
             <option value="11">１１月</option>
             <option value="12">１２月</option>
         </select>
+        <script>
+            const selectedMonth = document.getElementById('month').value;
+            const selectedDate = document.getElementById('anniversary');
+            const date31 = [29, 30, 31];
+            const date31_j = ["２９日", "３０日", "３１日"]: 
+            if (selectedMonth == 4 || selectedMonth == 6 || selectedMonth == 9 || selectedMonth ==11) {
+                let option = document.createElement('option');
+                for (var i=0; i<2; i++){
+                    option.value = date31[i];
+                    option.text = date31_j[i];
+                    selectedDate.appendChild(option);
+                };
+            }else if (selectedMonth != 2){
+                for (var i=0; i<3; i++){
+                    option.value = date31[i];
+                    option.text = date31_j[i];
+                    selectedDate.appendChild(option);
+                };
+            };
+        </script>
         <p class="mt-3">日</p>
         <select class="form-control w-100 mt-1" name="date" required>
             <option disabled selected>選択してください</option>
@@ -61,9 +82,6 @@
             <option value="26">２６日</option>
             <option value="27">２７日</option>
             <option value="28">２８日</option>
-            <option value="29">２９日</option>
-            <option value="30">３０日</option>
-            <option value="31">３１日</option>
         </select>
         <p class="mt-3">年（オプション）</p>
         <select class="form-control w-100 mt-1" name="year">
