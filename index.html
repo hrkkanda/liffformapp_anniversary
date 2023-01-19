@@ -14,8 +14,8 @@
         const date31_j = ["２９日", "３０日", "３１日"]: 
         const setOptions(month){
             const selectedDate = document.getElementById('date');
+            let option = document.createElement('option');
             if (month == 4 || month == 6 || month == 9 || month ==11) {
-                let option = document.createElement('option');
                 for (var i=0; i<2; i++){
                     option.value = date31[i];
                     option.text = date31_j[i];
