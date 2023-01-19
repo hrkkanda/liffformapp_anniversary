@@ -9,6 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
 </head>
 <body>
+    <script>
+        const selectedMonth = document.getElementById('month').value;
+        const selectedDate = document.getElementById('date');
+        const date31 = [29, 30, 31];
+        const date31_j = ["２９日", "３０日", "３１日"]: 
+        if (selectedMonth == 4 || selectedMonth == 6 || selectedMonth == 9 || selectedMonth ==11) {
+            let option = document.createElement('option');
+            for (var i=0; i<2; i++){
+                option.value = date31[i];
+                option.text = date31_j[i];
+                selectedDate.appendChild(option);
+             };
+         }else if (selectedMonth != 2){
+             for (var i=0; i<3; i++){
+                 option.value = date31[i];
+                 option.text = date31_j[i];
+                 selectedDate.appendChild(option);
+              };
+         };
+    </script>
 
     <form class="w-75 mx-auto">
         <p class="mt-3">記念日の名前</p>
@@ -31,26 +51,6 @@
             <option value="11">１１月</option>
             <option value="12">１２月</option>
         </select>
-        <script>
-            const selectedMonth = document.getElementById('month').value;
-            const selectedDate = document.getElementById('date');
-            const date31 = [29, 30, 31];
-            const date31_j = ["２９日", "３０日", "３１日"]: 
-            if (selectedMonth == 4 || selectedMonth == 6 || selectedMonth == 9 || selectedMonth ==11) {
-                let option = document.createElement('option');
-                for (var i=0; i<2; i++){
-                    option.value = date31[i];
-                    option.text = date31_j[i];
-                    selectedDate.appendChild(option);
-                };
-            }else if (selectedMonth != 2){
-                for (var i=0; i<3; i++){
-                    option.value = date31[i];
-                    option.text = date31_j[i];
-                    selectedDate.appendChild(option);
-                };
-            };
-        </script>
         <p class="mt-3">日</p>
         <select class="form-control w-100 mt-1" name="date" id="date" required>
             <option disabled selected>選択してください</option>
