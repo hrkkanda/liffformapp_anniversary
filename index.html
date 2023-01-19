@@ -18,13 +18,13 @@
             if (month == 4 || month == 6 || month == 9 || month ==11) {
                 for (var i=0; i<2; i++){
                     option.value = date31[i];
-                    option.text = date31_j[i];
+                    option.innerHTML = date31_j[i];
                     selectedDate.appendChild(option);
                 };
             }else if (month != 2){
                 for (var i=0; i<3; i++){
                     option.value = date31[i];
-                    option.text = date31_j[i];
+                    option.innerHTML = date31_j[i];
                     selectedDate.appendChild(option);
                 };
             };
