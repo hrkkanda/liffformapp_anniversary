@@ -65,8 +65,8 @@
             <option value="31">３１日</option>
         </select>
         <p class="mt-3">年（オプション）</p>
-        <select class="form-control w-100 mt-1" name="year" reversed="reversed">
-            <option value="" selected>選択しない！</option>
+        <select class="form-control w-100 mt-1" name="year" id="year">
+            <option value="" selected>選択しない</option>
             <option value="1926">昭和元年（1926）</option>
             <option value="1927">昭和02年（1927）</option>
             <option value="1928">昭和03年（1928）</option>
@@ -231,5 +231,22 @@
         });
 
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selectElement = document.getElementById("year");
+            const options = Array.from(selectElement.options);
+            // Reverse the order of options
+            options.reverse();
+            // Remove existing options from select element
+            while (selectElement.firstChild) {
+                selectElement.removeChild(selectElement.firstChild);
+            }
+            // Append reversed options to select element
+            options.forEach(option => {
+                selectElement.appendChild(option);
+            });
+        });
+    </script>
+
 </body>
 </html>
